@@ -1,9 +1,5 @@
 body {
-  background: radial-gradient(
-    circle at 0.8% 1.8%,
-    rgb(255, 104, 107) 0%,
-    rgb(255, 187, 103) 90.1%
-  );
+  background: linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113));
   color: #2b2b2b;
 }
 
@@ -45,4 +41,15 @@ a {
   margin: 50px auto;
   max-width: 600px;
   padding: 50px;
+}
+
+.further-info {
+  position: relative;
+  right: -40px;
+  top: 23px;
+}
+
+#icon {
+  position: relative;
+  top: -16px;
 }
