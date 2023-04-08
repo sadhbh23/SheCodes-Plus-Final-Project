@@ -1,0 +1,30 @@
+body {
+  color: #2b2b2b;
+}
+
+ul {
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+small {
+  color: #a3a3a3;
+  display: block;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+a {
+  color: #ff5035;
+}
+
+.app-interface {
+  border: 2px solid #2b2b2b;
+  border-radius: 15px;
+  margin: 50px auto;
+  max-width: 600px;
+  padding: 50px;
+}
