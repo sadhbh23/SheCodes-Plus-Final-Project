@@ -10,6 +10,17 @@ li {
   list-style: none;
 }
 
+span.temp-number {
+  font-size: 60px;
+  font-weight: 400;
+}
+
+span.temp-units {
+  font-weight: 500;
+  position: relative;
+  top: -32px;
+}
+
 small {
   color: #a3a3a3;
   display: block;
