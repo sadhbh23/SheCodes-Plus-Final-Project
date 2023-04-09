@@ -46,7 +46,7 @@ a {
   border: 2px solid #fff;
   border-radius: 15px;
   margin: 50px auto;
-  max-width: 600px;
+  max-width: 650px;
   padding: 50px;
 }
 
@@ -54,6 +54,23 @@ a {
   position: relative;
   right: -40px;
   top: 23px;
+}
+
+.weather-forecast {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.forecast-day {
+  color: #2b2b2b;
+}
+
+.forecast-temp-max {
+  color: #ff5035;
+}
+
+.forecast-temp-min {
+  color: #a3a3a3;
 }
 
 .temp-units .active {
