@@ -38,6 +38,7 @@ small {
 
 a {
   color: #ff5035;
+  text-decoration: none;
 }
 
 .app-interface {
@@ -53,6 +54,16 @@ a {
   position: relative;
   right: -40px;
   top: 23px;
+}
+
+.temp-units .active {
+  color: #2b2b2b;
+  cursor: default;
+  text-decoration: none;
+}
+
+.temp-units .active:hover {
+  text-decoration: none;
 }
 
 #icon {
