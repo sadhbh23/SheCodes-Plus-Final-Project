@@ -1,3 +1,5 @@
+// Functions Definition
+
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -45,6 +47,38 @@ function displayData(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col">
+              <ul>
+                <li class="forecast-day">${day}</li>
+                <li>
+                  <img
+                    src="https://openweathermap.org/img/wn/04d@2x.png"
+                    alt=""
+                    width="65px"
+                  />
+                </li>
+                <li>
+                  <span class="forecast-temp-max">18°</span>
+                  <span class="forecast-temp-min">12°</span>
+                </li>
+              </ul>
+            </div>
+          `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function search(city) {
   let apiKey = "74373fd9c9c828199b66c103f4039a7d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -75,6 +109,8 @@ function displayCelciusTemp(event) {
   fahrenheitLink.classList.remove("active");
 }
 
+// Global Variables Definition & Unit Link Event Listeners
+
 let celciusTemperature = null;
 
 let form = document.querySelector("#search-form");
@@ -86,4 +122,7 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemp);
 
+// User-Involuntary Invoking of Functions
+
 search("amsterdam");
+displayForecast();
