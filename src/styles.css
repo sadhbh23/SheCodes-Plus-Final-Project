@@ -3,11 +3,17 @@ body {
   color: #2b2b2b;
 }
 
+h1 {
+  font-size: 50px;
+  margin-top: 20px;
+}
+
 ul {
   padding: 0px;
 }
 
 li {
+  font-size: 18px;
   list-style: none;
   text-transform: capitalize;
 }

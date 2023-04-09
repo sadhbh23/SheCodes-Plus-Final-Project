@@ -18,9 +18,25 @@
   <body>
     <div class="container">
       <div class="app-interface">
+        <form id="search-form">
+          <div class="row">
+            <div class="col-8">
+              <input
+                type="search"
+                placeholder="Search a city..."
+                autocomplete="off"
+                class="form-control"
+                id="city-input"
+              />
+            </div>
+            <div class="col">
+              <input type="submit" value="Search" class="btn btn-dark" />
+            </div>
+          </div>
+        </form>
         <h1 id="city"></h1>
         <ul>
-          <li id="date-time-info"></li>
+          <li>Last updated: <span id="date-time-info"></span></li>
           <li id="weather-description"></li>
         </ul>
 
