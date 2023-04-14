@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113));
+  background: linear-gradient(to right, #ff9966, #ff5e62);
   color: #2b2b2b;
 }
 
@@ -15,6 +15,9 @@ ul {
 li {
   font-size: 18px;
   list-style: none;
+}
+
+li::first-letter {
   text-transform: capitalize;
 }
 
@@ -24,9 +27,10 @@ span.temp-number {
 }
 
 span.temp-units {
+  font-size: 20px;
   font-weight: 500;
   position: relative;
-  top: -32px;
+  top: -29px;
 }
 
 small {
@@ -37,7 +41,7 @@ small {
 }
 
 a {
-  color: #ff5035;
+  color: #ff5e62;
   text-decoration: none;
 }
 
@@ -45,7 +49,7 @@ a {
   background-color: #fff;
   border: 2px solid #fff;
   border-radius: 15px;
-  margin: 50px auto;
+  margin: 70px auto;
   max-width: 650px;
   padding: 50px;
 }
@@ -54,6 +58,10 @@ a {
   position: relative;
   right: -40px;
   top: 23px;
+}
+
+.wind-units {
+  text-transform: lowercase;
 }
 
 .weather-forecast {
@@ -66,21 +74,11 @@ a {
 }
 
 .forecast-temp-max {
-  color: #ff5035;
+  color: #ff5e62;
 }
 
 .forecast-temp-min {
   color: #a3a3a3;
-}
-
-.temp-units .active {
-  color: #2b2b2b;
-  cursor: default;
-  text-decoration: none;
-}
-
-.temp-units .active:hover {
-  text-decoration: none;
 }
 
 #icon {

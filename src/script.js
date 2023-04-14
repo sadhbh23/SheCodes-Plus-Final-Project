@@ -31,10 +31,8 @@ function formatDateForecast(timestamp) {
 }
 
 function retrieveForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "74373fd9c9c828199b66c103f4039a7d";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=minutely,hourly&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -61,7 +59,6 @@ function displayData(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  console.log(response.data);
   retrieveForecast(response.data.coord);
 }
 
@@ -120,35 +117,10 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  let fahrenheitTemp = Math.round((celciusTemperature * 9) / 5 + 32);
-  let tempElement = document.querySelector("#temp-number");
-  tempElement.innerHTML = fahrenheitTemp;
-  celciusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-
-function displayCelciusTemp(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temp-number");
-  tempElement.innerHTML = celciusTemperature;
-  celciusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-}
-
 // Global Variables Definition & Unit Link Event Listeners
-
-let celciusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", displayCelciusTemp);
 
 // User-Involuntary Invoking of Functions
 
