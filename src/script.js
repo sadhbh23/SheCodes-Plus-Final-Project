@@ -23,6 +23,14 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function retrieveForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "74373fd9c9c828199b66c103f4039a7d";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude=minutely,hourly&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayData(response) {
   let tempElement = document.querySelector("#temp-number");
   let cityElement = document.querySelector("#city");
@@ -45,9 +53,13 @@ function displayData(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  console.log(response.data);
+  retrieveForecast(response.data.coord);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#weather-forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -125,4 +137,3 @@ celciusLink.addEventListener("click", displayCelciusTemp);
 // User-Involuntary Invoking of Functions
 
 search("amsterdam");
-displayForecast();
